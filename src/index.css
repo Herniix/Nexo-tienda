@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: theme("colors.bg");
+  color: theme("colors.ink");
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  letter-spacing: -0.02em;
+}
+
+/* Chip de especificaciones estilo "spec sheet" — la firma visual de la marca */
+.spec-chip {
+  font-family: theme("fontFamily.mono");
+  font-size: 10.5px;
+  color: theme("colors.ink-soft");
+  background: theme("colors.bg");
+  border: 1px solid theme("colors.border");
+  padding: 3px 7px;
+  border-radius: 6px;
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-float {
+  animation: floatY 5s ease-in-out infinite;
+}
+
+/* Respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
